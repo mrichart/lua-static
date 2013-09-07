@@ -16,7 +16,7 @@ LIBS= -lm $(MYLIBS)
 
 MYCFLAGS= -Wall
 MYLDFLAGS= -pie -fpie
-MYLIBS= socket.o
+MYLIBS= ../../luasocket-2.0.2/src/socket.o
 
 # == END OF USER SETTINGS. NO NEED TO CHANGE ANYTHING BELOW THIS LINE =========
 

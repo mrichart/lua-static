@@ -13,7 +13,7 @@ For compiling lua (in Ubuntu box):
   - In luasocket-2.0.2/src do:
     - precompiler.lua -o luasocketscripts -l "?.lua" socket.lua socket/ftp.lua socket/http.lua socket/smtp.lua socket/tp.lua socket/url.lua mime.lua ltn12.lua
 
-    - lua preloader.lua -o fullluasocket luasocket.h mime.h luasocketscripts.h
+    - preloader.lua -o fullluasocket luasocket.h mime.h luasocketscripts.h
 - Compile lua socket:
   - In luasocket-2.0.2/src do:
     - make static

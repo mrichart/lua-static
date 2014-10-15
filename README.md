@@ -5,6 +5,10 @@ Lua and lua socket with modifications to be statically compiled. Necessary for e
 
 For compiling lua (in Ubuntu box):
 
+- Install lua and liblua:
+  sudo apt-get install lua5.1
+  sudo apt-get install liblua5.1-0-dev
+
 - Install loop using luarocks:
   - sudo apt-get install luarocks
   - sudo luarocks install loop

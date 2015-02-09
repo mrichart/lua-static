@@ -20,12 +20,11 @@ For compiling lua (in Ubuntu box):
     - preloader.lua -o fullluasocket luasocket.h mime.h luasocketscripts.h
 - Compile lua socket:
   - In luasocket-2.0.2/src do:
-    - make static
-    - cp fullluasocket.h ../../lua-5.1.5/src
+    - make static copy clean
     
 - Compile lua:
   - In lua-5.1.5/src do:
-    - make ns3
+    - make ns3 clean
     
 The executable "lua" obtained has luasocket included
   

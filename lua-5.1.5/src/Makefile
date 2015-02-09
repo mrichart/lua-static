@@ -16,7 +16,7 @@ LIBS= -lm $(MYLIBS)
 
 MYCFLAGS= -Wall
 MYLDFLAGS= -pie -fpie -rdynamic
-MYLIBS= ../../luasocket-2.0.2/src/socket.o
+MYLIBS= socket.o
 
 # == END OF USER SETTINGS. NO NEED TO CHANGE ANYTHING BELOW THIS LINE =========
 
@@ -34,6 +34,8 @@ LUA_O=	lua.o
 
 LUAC_T=	luac
 LUAC_O=	luac.o print.o
+
+SOCKET_O= socket.o
 
 ALL_O= $(CORE_O) $(LIB_O) $(LUA_O) $(LUAC_O)
 ALL_T= $(LUA_A) $(LUA_T) $(LUAC_T)
@@ -57,8 +59,11 @@ $(LUA_T): $(LUA_O) $(LUA_A)
 $(LUAC_T): $(LUAC_O) $(LUA_A)
 	$(CC) -o $@ $(MYLDFLAGS) $(LUAC_O) $(LUA_A) $(LIBS)
 
+copy:
+	cp lua ../../
+
 clean:
-	$(RM) $(ALL_T) $(ALL_O)
+	$(RM) $(ALL_T) $(ALL_O) $(SOCKET_O) fullluasocket.h
 
 depend:
 	@$(CC) $(CFLAGS) -MM l*.c print.c

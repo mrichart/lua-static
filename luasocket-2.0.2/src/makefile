@@ -92,9 +92,13 @@ usocket.o: usocket.c socket.h io.h timeout.h usocket.h
 luasocketscripts.o: luasocketscripts.c luasocketscripts.h
 fullluasocket.o: fullluasocket.c fullluasocket.h
 
+copy: 
+	cp fullluasocket.h ../../lua-5.1.5/src
+	cp socket.o ../../lua-5.1.5/src
 clean:
-	rm -f $(SOCKET_SO) $(SOCKET_OBJS) $(STATIC_OBJS)
+	rm -f $(SOCKET_SO) $(SOCKET_OBJS) $(STATIC_OBJS) $(SOCKET_O)
 	rm -f $(MIME_SO) $(UNIX_SO) $(MIME_OBJS) $(UNIX_OBJS)
+	rm -f luasocketscripts.h luasocketscripts.c fullluasocket.h fullluasocket.c 
 
 #------
 # End of makefile configuration

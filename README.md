@@ -24,9 +24,9 @@ For compiling lua (in Ubuntu box):
     
 - Compile lua:
   - In lua-5.1.5/src do:
-    - make ns3 clean
+    - make ns3 copy clean
     
-The executable "lua" obtained has luasocket included
+The executable "lua" obtained in lua-static directory has luasocket included.
   
   
 

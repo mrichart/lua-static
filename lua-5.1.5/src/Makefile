@@ -15,8 +15,8 @@ RM= rm -f
 LIBS= -lm $(MYLIBS)
 
 MYCFLAGS= -Wall
-MYLDFLAGS= -pie -fpie -rdynamic
-MYLIBS= socket.o
+MYLDFLAGS=
+MYLIBS= 
 
 # == END OF USER SETTINGS. NO NEED TO CHANGE ANYTHING BELOW THIS LINE =========
 
@@ -63,7 +63,7 @@ copy:
 	cp lua ../../
 
 clean:
-	$(RM) $(ALL_T) $(ALL_O) $(SOCKET_O) fullluasocket.h
+	$(RM) $(ALL_T) $(ALL_O) $(SOCKET_O) 
 
 depend:
 	@$(CC) $(CFLAGS) -MM l*.c print.c
@@ -121,7 +121,7 @@ solaris:
 	$(MAKE) all MYCFLAGS="-DLUA_USE_POSIX -DLUA_USE_DLOPEN" MYLIBS="-ldl"
 	
 ns3:
-	$(MAKE) all MYCFLAGS="-fPIC -g"
+	$(MAKE) all MYCFLAGS="-fPIC -g -DLUA_USE_DLOPEN" MYLDFLAGS="-pie -fpie -rdynamic" MYLIBS="-ldl"
 
 # list targets that do not create files (but not all makes understand .PHONY)
 .PHONY: all $(PLATS) default o a clean depend echo none

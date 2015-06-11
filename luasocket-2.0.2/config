@@ -57,8 +57,8 @@ INSTALL_EXEC=cp
 #CC=gcc
 #DEF=-DLUASOCKET_DEBUG 
 #CFLAGS= $(LUAINC) $(DEF) -pedantic -Wall -O2 -fpic
-#LDFLAGS=-O -shared -fpic
-#LD=gcc 
+LDFLAGS=-O -shared -fpic
+LD=gcc 
 
 #------
 # Compiler and linker settings
@@ -66,8 +66,8 @@ INSTALL_EXEC=cp
 CC=gcc
 DEF=-DLUASOCKET_DEBUG 
 CFLAGS= $(LUAINC) $(DEF) -Wall -fpic -g
-LDFLAGS=-O -fpic -r 
-LD=ld 
+#LDFLAGS=-O -fpic -r 
+#LD=ld 
 
 #------
 # End of makefile configuration
